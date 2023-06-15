@@ -1,10 +1,15 @@
 import React from 'react';
+import Display from "./Display";
 
 function PigTile(props) {
     return(
-    <div >
-        <image src={props.hogs.image}/>
-    </div>
+        <div key={props.hogs.name} className="pigTile">
+         	<img src={props.hogs.image} alt={props.hogs.name} />
+        <p>{props.hogs.name}</p>
+        {props.hogs.map((hogs) => (
+        <Display hogs={props.hogs}/>
+        ))}
+        </div>
     )
 }
 
